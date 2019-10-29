@@ -1,0 +1,21 @@
+#header{
+    border-radius:75px;
+    box-shadow: 10px 10px 5px gray;
+    width:96%;
+    height:250px;
+    margin:2%;
+    background-color: #00c1fc;
+    position: sticky;
+    top: 1%;
+}
+#header h1{
+    text-align:center;
+    margin:0;
+    line-height: 250px;
+    font-size: 100pt;
+    font-family: 'Comfortaa';
+    color:white;
+}
+body{
+    margin:0;
+}
