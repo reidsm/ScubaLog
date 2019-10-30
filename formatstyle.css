@@ -5,7 +5,7 @@
     height:250px;
     margin:2%;
     background-color: #00c1fc;
-    position: sticky;
+    position: fixed;
     top: 1%;
 }
 #header h1{
