@@ -8,126 +8,151 @@
 
         <style>
           #addNew{
-            /*position: absolute;*/
-            width: 75%;
-height: 150px;
-left: 15px;
-top: 95px;
-margin: auto;
-background: #FFFFFF;
-border: 3px dashed #000000;
-box-sizing: border-box;
-margin-top:50px;
-margin-bottom:50px;
+             position: fixed;
+            width: 75vw;
+            left: 12.5vw;
+            height: 150px;
+            margin: auto;
+            margin-top:18vh;
+            background: #FFFFFF;
+            border: 3px dashed #000000;
           }
           #plus{
-            /*position: absolute;*/
-width: 37px;
-height: 75px;
-left: 187px;
-top: 88px;
-margin: auto;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 120px;
-line-height: 75px;
-padding-top: 2vh;
-/* identical to box height */
-
-
-color: #000000;
+            width: 37px;
+            height: 75px;
+            left: 187px;
+            top: 88px;
+            margin: auto;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 120px;
+            line-height: 75px;
+            padding-top: 2vh;
+            color: #000000;
+          }
+          
+          #headerBackground{
+            background-color: white;
+            height:500px;
+            width:100vw;
+            position:fixed;
           }
 
-#tdRight{
-  padding-top:2vh;
-  padding-bottom:2vh;
-  padding-left:8vw;
-  font-size:30pt;
-}
+          #logs {
+            padding-top:28vh;
+          }
 
-#divCirc{
-  border: solid 1px black;
-  border-radius:50%;
-  margin-left:8vw;
-  height:130px;
-  width:130px;
-  text-align:center;  
-  font-size:40px;
-}
+          .tdRight{
+            padding-top:2vh;
+            padding-bottom:2vh;
+            padding-left:8vw;
+            font-size:30pt;
+          }
 
-#circNum{
-  padding-top:.1vh;
-}
+          .divCirc{
+            border: solid 2px black;
+            border-radius:50%;
+            margin-left:8vw;
+            height:130px;
+            width:130px;
+            text-align:center;  
+            font-size:40px;
+          }
 
-#recordTitle{
-  margin-bottom:1vh;
-}
+          .circNum{
+            padding-top:.1vh;
+          }
+
+          .recordTitle{
+            margin-bottom:1vh;
+          }
 
 
         </style>
     </head>
     <body>
+      <div id="headerBackground">
         <div id="header">
             <h1>ScubaLogs</h1>
         </div>
         <div id="addNew">
-            <div id="plus">+</div>
+            <div id="plus">+</div>        
         </div>
+      </div>
+        <div id="logsParent">
         <div id="logs"></div>
+      </div>
+        
 <script>
   function addLog() {
+
+    var topHr = [];
+    var recordTable = [];
+    var recordTr = [];
+    var tdLeft = [];
+    var tdRight = [];
+    var divCirc = [];
+    var circNum = [];
+    var recordTitle = [];
+    var recordDate = [];
+    var bottomHr = [];
+
     var topHr = document.createElement("hr");
-    topHr.setAttribute("id", "topHr");
+    topHr.setAttribute("id", "topHrBase");
+    topHr.setAttribute("class", "topHr");
     document.getElementById("logs").appendChild(topHr);
-
-    var recordTable = document.createElement("table");
-    recordTable.setAttribute("id", "recordTable");
-    document.getElementById("logs").appendChild(recordTable);
-
-    var recordTr = document.createElement("tr");
-    recordTr.setAttribute("id", "recordTr");
-    document.getElementById("recordTable").appendChild(recordTr);
-
-    var tdLeft = document.createElement("td");
-    tdLeft.setAttribute("id", "tdLeft");
-    document.getElementById("recordTr").appendChild(tdLeft);
-
-    var tdRight = document.createElement("td");
-    tdRight.setAttribute("id", "tdRight");
-    document.getElementById("recordTr").appendChild(tdRight);
-    /*
-    var recordDiv = document.createElement("div");
-    recordDiv.setAttribute("id", "recordDiv");
-    document.getElementById("logs").appendChild(recordDiv);
-    */
     
-    
-    var divCirc = document.createElement("div");
-    divCirc.setAttribute("id", "divCirc");
-    /*divCirc.innerHTML = "2";*/
-    document.getElementById("tdLeft").appendChild(divCirc);
+    for(i = 25; i >= -1; i--) {
 
-    var circNum = document.createElement("p");
-    circNum.setAttribute("id", "circNum");
-    circNum.innerHTML = "<b>2</b>";
-    document.getElementById("divCirc").appendChild(circNum);
+    recordTable[i] = document.createElement("table");
+    recordTable[i].setAttribute("id", "recordTable" + i);
+    recordTable[i].setAttribute("class", "recordTable");
+    document.getElementById("logs").appendChild(recordTable[i]);
 
-    var recordTitle = document.createElement("div");
-    recordTitle.setAttribute("id", "recordTitle");
-    recordTitle.innerHTML = "<b>Ogden Point, Victoria BC</b>";
-    document.getElementById("tdRight").appendChild(recordTitle);
+    recordTr[i] = document.createElement("tr");
+    recordTr[i].setAttribute("id", "recordTr" + i);
+    recordTr[i].setAttribute("class", "recordTr");
+    document.getElementById("recordTable" + i).appendChild(recordTr[i]);
 
-    var recordDate = document.createElement("div");
-    recordDate.setAttribute("id", "recordDate");
-    recordDate.innerHTML = "01 June, 2019";
-    document.getElementById("tdRight").appendChild(recordDate);
+    tdLeft[i] = document.createElement("td");
+    tdLeft[i].setAttribute("id", "tdLeft" + i);
+    tdLeft[i].setAttribute("class", "tdLeft");
+    document.getElementById("recordTr" + i).appendChild(tdLeft[i]);
 
-    var bottomHr = document.createElement("hr");
-    topHr.setAttribute("id", "bottomHr");
-    document.getElementById("logs").appendChild(bottomHr);
+    tdRight[i] = document.createElement("td");
+    tdRight[i].setAttribute("id", "tdRight" + i);
+    tdRight[i].setAttribute("class", "tdRight");
+    document.getElementById("recordTr" + i).appendChild(tdRight[i]);
+      
+    divCirc[i] = document.createElement("div");
+    divCirc[i].setAttribute("id", "divCirc" + i);
+    divCirc[i].setAttribute("class", "divCirc");
+    document.getElementById("tdLeft" + i).appendChild(divCirc[i]);
 
+    circNum[i] = document.createElement("p");
+    circNum[i].setAttribute("id", "circNum" + i);
+    circNum[i].setAttribute("class", "circNum");
+    circNum[i].innerHTML = "<b>" + i + "</b>";
+    document.getElementById("divCirc" + i).appendChild(circNum[i]);
+
+    recordTitle[i] = document.createElement("div");
+    recordTitle[i].setAttribute("id", "recordTitle" + i);
+    recordTitle[i].setAttribute("class", "recordTitle");
+    recordTitle[i].innerHTML = "<b>Ogden Point, Victoria BC</b>";
+    document.getElementById("tdRight" + i).appendChild(recordTitle[i]);
+
+    recordDate[i] = document.createElement("div");
+    recordDate[i].setAttribute("id", "recordDate" + i);
+    recordDate[i].setAttribute("class", "recordDate");
+    recordDate[i].innerHTML = "01 June, 2019";
+    document.getElementById("tdRight" + i).appendChild(recordDate[i]);
+
+    bottomHr[i] = document.createElement("hr");
+    bottomHr[i].setAttribute("id", "bottomHr" + i);
+    bottomHr[i].setAttribute("class", "bottomHr");
+    document.getElementById("logs").appendChild(bottomHr[i]);
+    }
   }
   addLog();
 </script>
