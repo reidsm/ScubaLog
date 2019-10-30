@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="Logstyle.css">
+        <link href='https://fonts.googleapis.com/css?family=Archivo+Narrow' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="./scripts/jquery.star.rating.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <h1>ScubaLogs</h1>
+        </div>
+        <div id="body">
+            <div class="dataBox">
+                <h3>TIME AND PLACE OF DIVE</h3>
+                <form>
+                    <input type="text" id="diveSite" placeholder="Dive Site Name" pattern="[A-Za-z0-9]">
+                    <input type="text" id="location" placeholder="City, Country of Dive Site" pattern="[A-Za-z0-9]">
+                    <input type="text" id="date" placeholder="Date" pattern="[A-Za-z0-9]">
+                    <input type="text" id="timeDescended" placeholder="Time Descended" pattern="[A-Za-z0-9]">
+                </form>
+            </div>
+            <div class="dataBox">
+                <h3>DIVE PROFILE</h3>
+                <form>
+                    <input type="number" id="depth" placeholder="Dive Depth (meters)">
+                    <input type="number" id="length" placeholder="Dive Length (minutes)">
+                    <textarea id="buddies" placeholder="Dive Buddies"></textarea>
+                </form>
+            </div>
+            <div class="dataBox">
+                <h3>Performance</h3>
+                <form>
+                    <input type="number" id="totalWeight" placeholder="Total Weight to Descend (kg)">
+                    <!-- <input type="range" id="buoyancy" name="Buyancy Control" min="0" max="5"> -->
+                    <div id="buoyancy"></div>
+                </form>
+            </div>
+        </div>
+        <script>
+            $( function(){
+                $('#buoyancy').addRating();
+            });
+        </script>
+    </body>
+</html>

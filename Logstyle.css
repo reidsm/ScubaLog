@@ -1,0 +1,84 @@
+#header{
+    border-radius:75px;
+    box-shadow: 10px 10px 5px gray;
+    width:96%;
+    height:250px;
+    margin:2%;
+    background-color: #00c1fc;
+    position: sticky;
+    top: 1%;
+}
+#header h1{
+    text-align:center;
+    margin:0;
+    line-height: 250px;
+    font-size: 100pt;
+    font-family: 'Comfortaa';
+    color:white;
+}
+body{
+    margin:0;
+}
+.dataBox{
+    align-self: center;
+    width: 75%;
+    margin: 60px auto;
+    border-radius:50px;
+    border: 1px solid gray;
+    background-color: white;
+    box-shadow: 10px 10px 5px 0px gray;
+}
+.dataBox h3{
+    text-align: left;
+    font-family: 'Archivo Narrow';
+    font-size:30pt;
+    padding-left: 30px;
+    padding-top: 10px;
+    margin:0;
+    color: gray;
+    text-decoration: underline; 
+}
+.dataBox input{
+    width: 90%;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-left:5%;
+    font-size:24pt;
+}
+#timeDescended, #buddies{
+    margin-bottom:20px;
+}
+#buddies{
+    height:150px;
+    width: 89.5%;
+    margin-top: 8px;
+    margin-left:5%;
+    font-size:24pt;
+}
+#buoyancy{
+    width:auto;
+    
+}
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v7/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2'), url(https://fonts.gstatic.com/s/materialicons/v7/2fcrYFNaTjcS6g4U3t-Y5RV6cRhDpPC5P4GCEJpqGoc.woff) format('woff');
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    word-wrap: normal;
+    /* -moz-font-feature-settings: 'liga'; */
+    -moz-osx-font-smoothing: grayscale;
+}
+i {
+    cursor :  pointer;
+}
