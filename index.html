@@ -1,14 +1,137 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Scuba Log</title>
-  <meta charset="utf-8">
-  </head>
-  <body>
-  <h1>Scuba Dive Log</h1>
-    <p>Scott Reid, Daniil Molchanov, Sammy Assuncao test</p>
-    <a href="./index2.html">link to index 2</a>
-    <p>change1</p>
-      <p>This is one of the changes</p>
-  </body>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="formatstyle.css">
+        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+
+        <style>
+          #addNew{
+            /*position: absolute;*/
+            width: 75%;
+height: 150px;
+left: 15px;
+top: 95px;
+margin: auto;
+background: #FFFFFF;
+border: 3px dashed #000000;
+box-sizing: border-box;
+margin-top:50px;
+margin-bottom:50px;
+          }
+          #plus{
+            /*position: absolute;*/
+width: 37px;
+height: 75px;
+left: 187px;
+top: 88px;
+margin: auto;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 120px;
+line-height: 75px;
+padding-top: 2vh;
+/* identical to box height */
+
+
+color: #000000;
+          }
+
+#tdRight{
+  padding-top:2vh;
+  padding-bottom:2vh;
+  padding-left:8vw;
+  font-size:30pt;
+}
+
+#divCirc{
+  border: solid 1px black;
+  border-radius:50%;
+  margin-left:8vw;
+  height:130px;
+  width:130px;
+  text-align:center;  
+  font-size:40px;
+}
+
+#circNum{
+  padding-top:.1vh;
+}
+
+#recordTitle{
+  margin-bottom:1vh;
+}
+
+
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>ScubaLogs</h1>
+        </div>
+        <div id="addNew">
+            <div id="plus">+</div>
+        </div>
+        <div id="logs"></div>
+<script>
+  function addLog() {
+    var topHr = document.createElement("hr");
+    topHr.setAttribute("id", "topHr");
+    document.getElementById("logs").appendChild(topHr);
+
+    var recordTable = document.createElement("table");
+    recordTable.setAttribute("id", "recordTable");
+    document.getElementById("logs").appendChild(recordTable);
+
+    var recordTr = document.createElement("tr");
+    recordTr.setAttribute("id", "recordTr");
+    document.getElementById("recordTable").appendChild(recordTr);
+
+    var tdLeft = document.createElement("td");
+    tdLeft.setAttribute("id", "tdLeft");
+    document.getElementById("recordTr").appendChild(tdLeft);
+
+    var tdRight = document.createElement("td");
+    tdRight.setAttribute("id", "tdRight");
+    document.getElementById("recordTr").appendChild(tdRight);
+    /*
+    var recordDiv = document.createElement("div");
+    recordDiv.setAttribute("id", "recordDiv");
+    document.getElementById("logs").appendChild(recordDiv);
+    */
+    
+    
+    var divCirc = document.createElement("div");
+    divCirc.setAttribute("id", "divCirc");
+    /*divCirc.innerHTML = "2";*/
+    document.getElementById("tdLeft").appendChild(divCirc);
+
+    var circNum = document.createElement("p");
+    circNum.setAttribute("id", "circNum");
+    circNum.innerHTML = "<b>2</b>";
+    document.getElementById("divCirc").appendChild(circNum);
+
+    var recordTitle = document.createElement("div");
+    recordTitle.setAttribute("id", "recordTitle");
+    recordTitle.innerHTML = "<b>Ogden Point, Victoria BC</b>";
+    document.getElementById("tdRight").appendChild(recordTitle);
+
+    var recordDate = document.createElement("div");
+    recordDate.setAttribute("id", "recordDate");
+    recordDate.innerHTML = "01 June, 2019";
+    document.getElementById("tdRight").appendChild(recordDate);
+
+    var bottomHr = document.createElement("hr");
+    topHr.setAttribute("id", "bottomHr");
+    document.getElementById("logs").appendChild(bottomHr);
+
+  }
+  addLog();
+</script>
+
+    </body>
+
 </html>
