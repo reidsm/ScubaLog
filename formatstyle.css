@@ -1,12 +1,19 @@
 #header{
-    border-radius:75px;
+    border-bottom-left-radius:75px;
+    border-bottom-right-radius:75px;
     box-shadow: 10px 10px 5px gray;
-    width:96%;
+    width:100%;
+    padding-top: 130px;
     height:250px;
-    margin:2%;
     background-color: #00c1fc;
-    position: fixed;
-    top: 1%;
+    position: sticky;
+    top: 0%;
+}
+#backButton{
+    position:absolute;
+    color:white;
+    font-size:50pt;
+    transform: rotate(180deg) translateY(350px) translateX(-40px);
 }
 #header h1{
     text-align:center;
