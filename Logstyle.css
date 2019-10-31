@@ -1,7 +1,6 @@
 #header{
     border-bottom-left-radius:75px;
     border-bottom-right-radius:75px;
-    box-shadow: 10px 10px 5px gray;
     width:100%;
     padding-top: 130px;
     height:250px;
@@ -73,6 +72,20 @@ body{
     float:left;
     margin:0 5%;
     line-height: 280%;
+}
+#submit{
+    background-color: #00c1fc;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 3% 10%;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size:48pt;
+    font-family:'Archivo Narrow';
+    box-shadow: 10px 10px 5px gray;
 }
 @font-face {
     font-family: 'Material Icons';
