@@ -13,7 +13,7 @@
             left: 12.5vw;
             height: 150px;
             margin: auto;
-            margin-top:18vh;
+            margin-top:2vh;
             background: #FFFFFF;
             border: 3px dashed #000000;
           }
@@ -34,22 +34,19 @@
           
           #headerBackground{
             background-color: white;
-            height:500px;
+            height:600px;
             width:100vw;
             position:fixed;
           }
-
           #logs {
-            padding-top:28vh;
+            padding-top:34vh;
           }
-
           .tdRight{
             padding-top:2vh;
             padding-bottom:2vh;
             padding-left:8vw;
             font-size:30pt;
           }
-
           .divCirc{
             border: solid 2px black;
             border-radius:50%;
@@ -59,16 +56,17 @@
             text-align:center;  
             font-size:40px;
           }
-
           .circNum{
             padding-top:.1vh;
           }
-
           .recordTitle{
             margin-bottom:1vh;
           }
 
-
+          a {
+            text-decoration: none;
+            color:black;
+          }
         </style>
     </head>
     <body>
@@ -86,7 +84,6 @@
         
 <script>
   function addLog() {
-
     var topHr = [];
     var recordTable = [];
     var recordTr = [];
@@ -97,18 +94,24 @@
     var recordTitle = [];
     var recordDate = [];
     var bottomHr = [];
+    var linkRecord = [];
 
     var topHr = document.createElement("hr");
     topHr.setAttribute("id", "topHrBase");
     topHr.setAttribute("class", "topHr");
     document.getElementById("logs").appendChild(topHr);
     
-    for(i = 25; i >= -1; i--) {
+    for(i = 8; i > 0; i--) {
+
+    linkRecord[i] = document.createElement("a");
+    linkRecord[i].setAttribute("id", "linkRecord" + i);
+    linkRecord[i].setAttribute("href", "./Log.html")
+    document.getElementById("logs").appendChild(linkRecord[i]);
 
     recordTable[i] = document.createElement("table");
     recordTable[i].setAttribute("id", "recordTable" + i);
     recordTable[i].setAttribute("class", "recordTable");
-    document.getElementById("logs").appendChild(recordTable[i]);
+    document.getElementById("linkRecord" + i).appendChild(recordTable[i]);
 
     recordTr[i] = document.createElement("tr");
     recordTr[i].setAttribute("id", "recordTr" + i);
