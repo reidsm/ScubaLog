@@ -82,6 +82,7 @@ body{
     text-decoration: none;
     display: block;
     margin: 0 auto;
+    margin-bottom:10%;
     cursor: pointer;
     font-size:48pt;
     font-family:'Archivo Narrow';
