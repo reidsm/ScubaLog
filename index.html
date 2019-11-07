@@ -92,10 +92,20 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
     </script>
 
     <!-- STOP COPYING HERE *************************************************************************************************************-->
 
+    
+    <script src="scripts/create_user.js"></script>
+
+    <script> 
+        createUser();
+        showName();
+        setAddListener();
+      </script>
+    
         
     </head>
     <body>
@@ -110,7 +120,7 @@
         <div id="logsParent">
         <div id="logs"></div>
       </div>
-        
+
 <script>
   function addLog() {
     var topHr = [];
