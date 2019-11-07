@@ -8,6 +8,31 @@
         <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="./scripts/jquery.star.rating.js"></script>
+    
+        
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDG6WwVDEWYQoDYTknfV_z5Ml3n5pBOjFU",
+            authDomain: "scubalogs-f466a.firebaseapp.com",
+            databaseURL: "https://scubalogs-f466a.firebaseio.com",
+            projectId: "scubalogs-f466a",
+            storageBucket: "scubalogs-f466a.appspot.com",
+            messagingSenderId: "39791069014",
+            appId: "1:39791069014:web:03381d3ad726d71d1bb8f7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
     </head>
     <body>
         <div id="header">
