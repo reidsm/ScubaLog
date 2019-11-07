@@ -1,107 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Login Screen</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
-        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<head>
+    <title>Login Screen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+
+    <!-- START COPYING HERE **********************************************************************************************-->
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>    
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
-          apiKey: "AIzaSyBX_U-QZvt71pBxljgwF5W2VoAK7bCN0EE",
-          authDomain: "oct31-d6ad2.firebaseapp.com",
-          databaseURL: "https://oct31-d6ad2.firebaseio.com",
-          projectId: "oct31-d6ad2",
-          storageBucket: "oct31-d6ad2.appspot.com",
-          messagingSenderId: "834933426650",
-          appId: "1:834933426650:web:67face7d185096a57c98e3"
+            apiKey: "AIzaSyDG6WwVDEWYQoDYTknfV_z5Ml3n5pBOjFU",
+            authDomain: "scubalogs-f466a.firebaseapp.com",
+            databaseURL: "https://scubalogs-f466a.firebaseio.com",
+            projectId: "scubalogs-f466a",
+            storageBucket: "scubalogs-f466a.appspot.com",
+            messagingSenderId: "39791069014",
+            appId: "1:39791069014:web:03381d3ad726d71d1bb8f7"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-        <style>
-            
-            body{
-                background-color: #00c1fc;
-                margin: 0;
-            
-            }
-            #firebaseui-auth-container{
-                width: 80%;
-                margin: 10%;
-            }
-            #header{
-                
-                text-align:center;
-                margin-top: 180px;
-            
-                font-size: 20pt;
-                font-family: 'Comfortaa';
-                color:white;
-                
-            }
-            #loader{
-                text-align: center;
-                transform: translate(0px, -200px);
-                position: absolute;
-            }
-         
-            
-         
-        </style>
-    </head>
-    <body>
-        <div id="header">
-            <h1>ScubaLogs</h1>
-        </div>
-         <div id="firebaseui-auth-container"></div>
+
+    <!-- STOP COPYING HERE *************************************************************************************************************-->
+
+    <style>
+        body {
+            background-color: #00c1fc;
+            margin: 0;
+
+        }
+
+        #firebaseui-auth-container {
+            width: 80%;
+            margin: 10%;
+        }
+
+        #header {
+
+            text-align: center;
+            margin-top: 180px;
+
+            font-size: 20pt;
+            font-family: 'Comfortaa';
+            color: white;
+
+        }
+
+        #loader {
+            text-align: center;
+            transform: translate(0px, -200px);
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>ScubaLogs</h1>
+    </div>
+    <div id="firebaseui-auth-container"></div>
     <div id="loader">Loading...</div>
 
     <script>
         // Initialize the FirebaseUI Widget using Firebase.
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
         var uiConfig = {
-    callbacks: {
-        signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-            // User successfully signed in.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
-            return true;
-        },
-        uiShown: function() {
-            // The widget is rendered.
-            // Hide the loader.
-             document.getElementById('loader').style.display = 'none';
-        }
-    },
-        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-        signInFlow: 'popup',
-        signInSuccessUrl: 'index.html',
-        signInOptions: [
-            // Leave the lines as is for the providers you want to offer your users.
-            //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-            //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
-            //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-        ],
-        // Terms of service url.
-        tosUrl: 'index.html',
-        // Privacy policy url.
-        privacyPolicyUrl: '<your-privacy-policy-url>'
+            callbacks: {
+                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+                    // User successfully signed in.
+                    // Return type determines whether we continue the redirect automatically
+                    // or whether we leave that to developer to handle.
+                    return true;
+                },
+                uiShown: function () {
+                    // The widget is rendered.
+                    // Hide the loader.
+                    document.getElementById('loader').style.display = 'none';
+                }
+            },
+            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+            signInFlow: 'popup',
+            signInSuccessUrl: 'index.html',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                //firebase.auth.PhoneAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url.
+            tosUrl: 'index.html',
+            // Privacy policy url.
+            privacyPolicyUrl: '<your-privacy-policy-url>'
         };
-    // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig);
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
     </script>
 
-    </body>
+</body>
+
 </html>
