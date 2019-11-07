@@ -33,6 +33,8 @@
         firebase.initializeApp(firebaseConfig);
     </script>
 
+    <script src="./scripts/create_log.js"></script>
+
     </head>
     <body>
         <div id="header">
@@ -60,7 +62,7 @@
                 <p id="buoyancyLabel">Buoyancy Control: </p>
                 <div id="buoyancy"></div>
             </div>
-            <input type="submit" id="submit" value="Submit">
+            <button type="button" id="submit" value="Submit" onclick="handleSubmit()">SUBMIT</button>
         </form>
         </div>
         <script>
@@ -68,5 +70,40 @@
                 $('#buoyancy').addRating();
             });
         </script>
+
+        <script>
+        
+        function handleSubmit(){
+            var diveSite = document.getElementById('diveSite').value;
+            var location = document.getElementById('location').value;
+            var date = document.getElementById('date').value;
+            var timeDescended = document.getElementById('timeDescended').value;
+            
+            var depth = document.getElementById('depth').value;
+            var length = document.getElementById('length').value;
+            var buddies = document.getElementById('buddies').value;
+            var weight = document.getElementById('totalWeight').value;
+            // var buoyancyControl = document.getElementById('buoyancy').value;
+
+            // console.log(diveSite, location, date, timeDescended, depth, length, buddies, weight);
+            
+            var logObject = {
+                logDiveSite: diveSite,
+                logLocation: location,
+                logDate: date,
+                logTimeDescended: timeDescended,
+                logDepth: depth,
+                logLength: length,
+                logBuddies: buddies,
+                logWeight: weight,
+            };
+
+            console.log(logObject);
+            // createLog(logObject);
+            
+        }
+
+        </script>
+
     </body>
 </html>
