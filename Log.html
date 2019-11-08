@@ -31,6 +31,7 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
     </script>
 
     <script src="./scripts/create_log.js"></script>
@@ -47,8 +48,8 @@
                 <h3>TIME AND PLACE OF DIVE</h3>
                 <input type="text" id="diveSite" placeholder="Dive Site Name">
                 <input type="text" id="location" placeholder="City, Country of Dive Site">
-                <input type="text" id="date" placeholder="Date">
-                <input type="number" id="timeDescended" placeholder="Time Descended">
+                <input type="date" id="date">
+                <input type="time" id="timeDescended">
             </div>
             <div class="dataBox">
                 <h3>DIVE PROFILE</h3>
@@ -98,8 +99,8 @@
                 logWeight: weight,
             };
 
-            console.log(logObject);
-            // createLog(logObject);
+            //console.log(logObject);
+            createLog(logObject);
             
         }
 
