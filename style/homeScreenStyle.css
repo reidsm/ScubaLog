@@ -1,0 +1,58 @@
+#addNew{
+     position: fixed;
+     width: 75vw;
+     left: 12.5vw;
+     height: 150px;
+     margin: auto;
+     margin-top:2vh;
+     background: #FFFFFF;
+     border: 3px dashed #000000;
+}
+ #plus{
+     width: 37px;
+     height: 75px;
+     left: 187px;
+     top: 88px;
+     margin: auto;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 120px;
+     line-height: 75px;
+     padding-top: 2vh;
+     color: #000000;
+}
+ #headerBackground{
+     background-color: white;
+     height:600px;
+     width:100vw;
+     position:fixed;
+}
+ #logs {
+     padding-top:34vh;
+}
+ .tdRight{
+     padding-top:2vh;
+     padding-bottom:2vh;
+     padding-left:8vw;
+     font-size:30pt;
+}
+ .divCirc{
+     border: solid 2px black;
+     border-radius:50%;
+     margin-left:8vw;
+     height:130px;
+     width:130px;
+     text-align:center;
+     font-size:40px;
+}
+ .circNum{
+     padding-top:.1vh;
+}
+ .recordTitle{
+     margin-bottom:1vh;
+}
+ a {
+     text-decoration: none;
+     color:black;
+}

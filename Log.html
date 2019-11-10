@@ -1,48 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="Logstyle.css">
-        <link href='https://fonts.googleapis.com/css?family=Archivo+Narrow' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="./scripts/jquery.star.rating.js"></script>
-    
-        
-        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-        <!-- Add Firebase products that you want to use -->
-        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-        <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyDG6WwVDEWYQoDYTknfV_z5Ml3n5pBOjFU",
-            authDomain: "scubalogs-f466a.firebaseapp.com",
-            databaseURL: "https://scubalogs-f466a.firebaseio.com",
-            projectId: "scubalogs-f466a",
-            storageBucket: "scubalogs-f466a.appspot.com",
-            messagingSenderId: "39791069014",
-            appId: "1:39791069014:web:03381d3ad726d71d1bb8f7"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
-    </script>
 
+<head>
+    <title></title>
+    <meta charset="utf-8">
+
+    <!-- Style imports -->
+    <link rel="stylesheet" type="text/css" href="./style/Logstyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Archivo+Narrow' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./scripts/jquery.star.rating.js"></script>
+
+
+    <!-- Relevant firebase script imports -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <!-- Our app's firebase configuration -->
+    <script src="./scripts/firebaseConfig.js"></script>
+
+    <!-- The script that writes the log to the database as a document in a new collection -->
     <script src="./scripts/create_log.js"></script>
 
-    </head>
-    <body>
-        <div id="header">
-            <a href="index.html"><span id="backButton">&#10132;</span></a>
-            <h1>ScubaLogs</h1>
-        </div>
-        <div id="body">
+</head>
+
+<body>
+    <div id="header">
+        <a href="index.html"><span id="backButton">&#10132;</span></a>
+        <h1>ScubaLogs</h1>
+    </div>
+    <div id="body">
         <form>
             <div class="dataBox">
                 <h3>TIME AND PLACE OF DIVE</h3>
@@ -65,46 +56,18 @@
             </div>
             <button type="button" id="submit" value="Submit" onclick="handleSubmit()">SUBMIT</button>
         </form>
-        </div>
-        <script>
-            $( function(){
-                $('#buoyancy').addRating();
-            });
-        </script>
+    </div>
 
-        <script>
-        
-        function handleSubmit(){
-            var diveSite = document.getElementById('diveSite').value;
-            var location = document.getElementById('location').value;
-            var date = document.getElementById('date').value;
-            var timeDescended = document.getElementById('timeDescended').value;
-            
-            var depth = document.getElementById('depth').value;
-            var length = document.getElementById('length').value;
-            var buddies = document.getElementById('buddies').value;
-            var weight = document.getElementById('totalWeight').value;
-            // var buoyancyControl = document.getElementById('buoyancy').value;
+    <!-- Makes the buoyancy control jquery widget work -->
+    <script>
+        $(function () {
+            $('#buoyancy').addRating();
+        });
+    </script>
 
-            // console.log(diveSite, location, date, timeDescended, depth, length, buddies, weight);
-            
-            var logObject = {
-                logDiveSite: diveSite,
-                logLocation: location,
-                logDate: date,
-                logTimeDescended: timeDescended,
-                logDepth: depth,
-                logLength: length,
-                logBuddies: buddies,
-                logWeight: weight,
-            };
+    <!-- Script contains instructions for the submit button to write the record to the database -->
+    <script src="./scripts/logScreenHandleSubmit.js"></script>
 
-            //console.log(logObject);
-            createLog(logObject);
-            
-        }
+</body>
 
-        </script>
-
-    </body>
 </html>

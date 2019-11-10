@@ -1,0 +1,20 @@
+ body {
+     background-color: #00c1fc;
+     margin: 0;
+}
+ #firebaseui-auth-container {
+     width: 80%;
+     margin: 10%;
+}
+ #header {
+     text-align: center;
+     margin-top: 180px;
+     font-size: 20pt;
+     font-family: 'Comfortaa';
+     color: white;
+}
+ #loader {
+     text-align: center;
+     transform: translate(0px, -200px);
+     position: absolute;
+}

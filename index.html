@@ -1,204 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="formatstyle.css">
-        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
 
-        <style>
-          #addNew{
-             position: fixed;
-            width: 75vw;
-            left: 12.5vw;
-            height: 150px;
-            margin: auto;
-            margin-top:2vh;
-            background: #FFFFFF;
-            border: 3px dashed #000000;
-          }
-          #plus{
-            width: 37px;
-            height: 75px;
-            left: 187px;
-            top: 88px;
-            margin: auto;
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 120px;
-            line-height: 75px;
-            padding-top: 2vh;
-            color: #000000;
-          }
-          
-          #headerBackground{
-            background-color: white;
-            height:600px;
-            width:100vw;
-            position:fixed;
-          }
-          #logs {
-            padding-top:34vh;
-          }
-          .tdRight{
-            padding-top:2vh;
-            padding-bottom:2vh;
-            padding-left:8vw;
-            font-size:30pt;
-          }
-          .divCirc{
-            border: solid 2px black;
-            border-radius:50%;
-            margin-left:8vw;
-            height:130px;
-            width:130px;
-            text-align:center;  
-            font-size:40px;
-          }
-          .circNum{
-            padding-top:.1vh;
-          }
-          .recordTitle{
-            margin-bottom:1vh;
-          }
+<head>
+  <title></title>
+  <meta charset="utf-8">
 
-          a {
-            text-decoration: none;
-            color:black;
-          }
-        </style>
-        
-        <!-- START COPYING HERE **********************************************************************************************-->
+  <!-- Style Imports -->
+  <link rel="stylesheet" type="text/css" href="./style/formatstyle.css">
+  <link rel="stylesheet" type="text/css" href="./style/homeScreenStyle.css">
+  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
 
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyDG6WwVDEWYQoDYTknfV_z5Ml3n5pBOjFU",
-            authDomain: "scubalogs-f466a.firebaseapp.com",
-            databaseURL: "https://scubalogs-f466a.firebaseio.com",
-            projectId: "scubalogs-f466a",
-            storageBucket: "scubalogs-f466a.appspot.com",
-            messagingSenderId: "39791069014",
-            appId: "1:39791069014:web:03381d3ad726d71d1bb8f7"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
-    </script>
+  <!-- Relevant firebase script imports -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
-    <!-- STOP COPYING HERE *************************************************************************************************************-->
+  <!-- Our app's firebase configuration -->
+  <script src="./scripts/firebaseConfig.js"></script>
 
-    
-    <script src="scripts/create_user.js"></script>
+  <!-- Our app creates a user collection and document upon login -->
+  <script src="scripts/create_user.js">
+    createUser();
+  </script>
 
-    <script> 
-        createUser();
-        //showName();
-        //setAddListener();
-      </script>
-    
-        
-    </head>
-    <body>
-      <div id="headerBackground">
-        <div id="header">
-            <h1>ScubaLogs</h1>
-        </div>
-        <div id="addNew">
-            <div id="plus">+</div>        
-        </div>
+</head>
+
+<body>
+  <div id="headerBackground">
+    <div id="header">
+      <h1>ScubaLogs</h1>
+    </div>
+    <a href="./Log.html">
+      <div id="addNew">
+        <div id="plus">+</div>
       </div>
-        <div id="logsParent">
-        <div id="logs"></div>
-      </div>
+    </a>
+  </div>
+  <div id="logsParent">
+    <div id="logs"></div>
+  </div>
 
-<script>
-  function addLog() {
-    var topHr = [];
-    var recordTable = [];
-    var recordTr = [];
-    var tdLeft = [];
-    var tdRight = [];
-    var divCirc = [];
-    var circNum = [];
-    var recordTitle = [];
-    var recordDate = [];
-    var bottomHr = [];
-    var linkRecord = [];
+  <!-- TODO This script dynamically lists this user's scuba dive logs. -->
+  <script src="./scripts/generateLogList.js"></script>
 
-    var topHr = document.createElement("hr");
-    topHr.setAttribute("id", "topHrBase");
-    topHr.setAttribute("class", "topHr");
-    document.getElementById("logs").appendChild(topHr);
-    
-    for(i = 8; i > 0; i--) {
-
-    linkRecord[i] = document.createElement("a");
-    linkRecord[i].setAttribute("id", "linkRecord" + i);
-    linkRecord[i].setAttribute("href", "./Log.html")
-    document.getElementById("logs").appendChild(linkRecord[i]);
-
-    recordTable[i] = document.createElement("table");
-    recordTable[i].setAttribute("id", "recordTable" + i);
-    recordTable[i].setAttribute("class", "recordTable");
-    document.getElementById("linkRecord" + i).appendChild(recordTable[i]);
-
-    recordTr[i] = document.createElement("tr");
-    recordTr[i].setAttribute("id", "recordTr" + i);
-    recordTr[i].setAttribute("class", "recordTr");
-    document.getElementById("recordTable" + i).appendChild(recordTr[i]);
-
-    tdLeft[i] = document.createElement("td");
-    tdLeft[i].setAttribute("id", "tdLeft" + i);
-    tdLeft[i].setAttribute("class", "tdLeft");
-    document.getElementById("recordTr" + i).appendChild(tdLeft[i]);
-
-    tdRight[i] = document.createElement("td");
-    tdRight[i].setAttribute("id", "tdRight" + i);
-    tdRight[i].setAttribute("class", "tdRight");
-    document.getElementById("recordTr" + i).appendChild(tdRight[i]);
-      
-    divCirc[i] = document.createElement("div");
-    divCirc[i].setAttribute("id", "divCirc" + i);
-    divCirc[i].setAttribute("class", "divCirc");
-    document.getElementById("tdLeft" + i).appendChild(divCirc[i]);
-
-    circNum[i] = document.createElement("p");
-    circNum[i].setAttribute("id", "circNum" + i);
-    circNum[i].setAttribute("class", "circNum");
-    circNum[i].innerHTML = "<b>" + i + "</b>";
-    document.getElementById("divCirc" + i).appendChild(circNum[i]);
-
-    recordTitle[i] = document.createElement("div");
-    recordTitle[i].setAttribute("id", "recordTitle" + i);
-    recordTitle[i].setAttribute("class", "recordTitle");
-    recordTitle[i].innerHTML = "<b>Ogden Point, Victoria BC</b>";
-    document.getElementById("tdRight" + i).appendChild(recordTitle[i]);
-
-    recordDate[i] = document.createElement("div");
-    recordDate[i].setAttribute("id", "recordDate" + i);
-    recordDate[i].setAttribute("class", "recordDate");
-    recordDate[i].innerHTML = "01 June, 2019";
-    document.getElementById("tdRight" + i).appendChild(recordDate[i]);
-
-    bottomHr[i] = document.createElement("hr");
-    bottomHr[i].setAttribute("id", "bottomHr" + i);
-    bottomHr[i].setAttribute("class", "bottomHr");
-    document.getElementById("logs").appendChild(bottomHr[i]);
-    }
-  }
-  addLog();
-</script>
-
-    </body>
+</body>
 
 </html>
