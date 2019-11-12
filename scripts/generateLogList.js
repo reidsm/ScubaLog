@@ -76,3 +76,16 @@ function addLog() {
     }
 }
 addLog();
+
+function readLog() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        db.collection("users/").doc(user.uid).onSnapshot(function(snap){
+            console.log("Current data is: ", snap.data())})});
+        //document.getElementById("stuff").innerHTML = snap.data().message;
+        //another way is snap.data["message"];
+        }
+readLog();
+
+// db.collection("users/").doc(users.uid).onSnapshot(function(snap){
+//     console.log("Current data is: ", snap.data());
+//collection("logs/").doc(logs.lid)
