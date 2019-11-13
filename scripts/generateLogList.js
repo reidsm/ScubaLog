@@ -1,7 +1,44 @@
 //This script currently adds a list of scuba dive log records to the home screen.
 //It does not yet link to the user's record but it will.
 
-function addLog() {
+firebase.auth().onAuthStateChanged(function (user) {
+    var recordArray = [];
+
+    if (user) {
+        db.collection("users").doc(user.uid).collection("logs").get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                var record = {
+                    date: doc.data()['logDate'],
+                    site: doc.data()['logDiveSite'],
+                    place: doc.data()['logLocation']
+                };
+                recordArray.push(record);
+            });
+            addLog(recordArray);
+        });
+    } else {
+        console.log("This code should be unreachable. The funny thing is I feel like someone will see this message one day. I'm sorry. -S");
+    }
+});
+
+function addLog(recordArray) {
+
+    recordArray = recordArray.sort(function (a, b) {
+        var dateA = new Date(a.date);
+        var dateB = new Date(b.date);
+
+        if (dateA < dateB) {
+            return -1;
+        }
+        if (dateA > dateB) {
+            return 1;
+        }
+        return 0;
+    });
+    console.log(recordArray);
+    console.log(recordArray[0]['date']);
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+   
     var topHr = [];
     var recordTable = [];
     var recordTr = [];
@@ -19,7 +56,9 @@ function addLog() {
     topHr.setAttribute("class", "topHr");
     document.getElementById("logs").appendChild(topHr);
 
-    for (i = 8; i > 0; i--) {
+    for (i = recordArray.length; i > 0; i--) {
+
+        console.log(recordArray[i - 1]['date']);
 
         linkRecord[i] = document.createElement("a");
         linkRecord[i].setAttribute("id", "linkRecord" + i);
@@ -60,13 +99,18 @@ function addLog() {
         recordTitle[i] = document.createElement("div");
         recordTitle[i].setAttribute("id", "recordTitle" + i);
         recordTitle[i].setAttribute("class", "recordTitle");
-        recordTitle[i].innerHTML = "<b>Ogden Point, Victoria BC</b>";
+        recordTitle[i].innerHTML = "<b>" + recordArray[i - 1]['site'] + " " + recordArray[i - 1]['place'] + "</b>";
         document.getElementById("tdRight" + i).appendChild(recordTitle[i]);
 
         recordDate[i] = document.createElement("div");
         recordDate[i].setAttribute("id", "recordDate" + i);
         recordDate[i].setAttribute("class", "recordDate");
-        recordDate[i].innerHTML = "01 June, 2019";
+        var oneDate = new Date(recordArray[i - 1]['date']);
+        var dd = oneDate.getDate() + 1;
+        var mm = oneDate.getMonth();
+        var yyyy = oneDate.getFullYear();
+        console.log(dd, months[mm], yyyy);
+        recordDate[i].innerHTML = "" + " " + dd + " " + months[mm] + ", " + yyyy;
         document.getElementById("tdRight" + i).appendChild(recordDate[i]);
 
         bottomHr[i] = document.createElement("hr");
@@ -75,21 +119,3 @@ function addLog() {
         document.getElementById("logs").appendChild(bottomHr[i]);
     }
 }
-addLog();
-
-firebase.auth().onAuthStateChanged(function(user) {
-    var arr = [];
-
-    if (user) {
-        db.collection("users").doc(user.uid).collection("logs").get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                console.log(doc.id, " => ", doc.data());
-                console.log(doc.id, " => ", doc.data()['logDiveSite']);
-                arr.push(doc.data()['logDiveSite']);
-            });
-            console.log(arr);
-          });
-    } else {
-      console.log("This code should be unreachable. The funny thing is I feel like someone will see this message one day. I'm sorry. -S");
-    }
-  });
