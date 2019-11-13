@@ -77,15 +77,19 @@ function addLog() {
 }
 addLog();
 
-function readLog() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        db.collection("users/").doc(user.uid).onSnapshot(function(snap){
-            console.log("Current data is: ", snap.data())})});
-        //document.getElementById("stuff").innerHTML = snap.data().message;
-        //another way is snap.data["message"];
-        }
-readLog();
+firebase.auth().onAuthStateChanged(function(user) {
+    var arr = [];
 
-// db.collection("users/").doc(users.uid).onSnapshot(function(snap){
-//     console.log("Current data is: ", snap.data());
-//collection("logs/").doc(logs.lid)
+    if (user) {
+        db.collection("users").doc(user.uid).collection("logs").get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                console.log(doc.id, " => ", doc.data());
+                console.log(doc.id, " => ", doc.data()['logDiveSite']);
+                arr.push(doc.data()['logDiveSite']);
+            });
+            console.log(arr);
+          });
+    } else {
+      console.log("This code should be unreachable. The funny thing is I feel like someone will see this message one day. I'm sorry. -S");
+    }
+  });

@@ -17,12 +17,12 @@
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
-  <!-- Our app's firebase configuration -->
-  <script src="./scripts/firebaseConfig.js"></script>
+    <!-- Our app's firebase configuration -->
+    <script src="./scripts/firebaseConfig.js"></script>
 
-    <!-- Our app creates a user collection and document upon login -->
-    <script src="scripts/create_user.js"></script>
-    <script>createUser();</script>
+      <!-- Our app creates a user collection and document upon login -->
+      <script src="scripts/create_user.js"></script>
+      <script>createUser();</script>
 
 </head>
 
@@ -43,6 +43,20 @@
 
   <!-- TODO This script dynamically lists this user's scuba dive logs. -->
   <script src="./scripts/generateLogList.js"></script>
+
+  <!-- <script>
+//     console.log(firebase.auth().currentUser);
+//   //var user = firebase.auth().currentUser.uid;
+// //console.log(user);
+
+// db.collection("users").get().then(function(querySnapshot) {
+//     querySnapshot.forEach(function(doc) {
+//         console.log(doc.id, " => ", doc.data());
+//     });
+// });
+
+// console.log(docRef);
+  </script> -->
 
 </body>
 
