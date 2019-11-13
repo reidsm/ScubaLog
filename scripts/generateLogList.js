@@ -37,6 +37,7 @@ function addLog(recordArray) {
     });
     console.log(recordArray);
     console.log(recordArray[0]['date']);
+  
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
    
     var topHr = [];
@@ -57,8 +58,6 @@ function addLog(recordArray) {
     document.getElementById("logs").appendChild(topHr);
 
     for (i = recordArray.length; i > 0; i--) {
-
-        console.log(recordArray[i - 1]['date']);
 
         linkRecord[i] = document.createElement("a");
         linkRecord[i].setAttribute("id", "linkRecord" + i);
@@ -105,11 +104,14 @@ function addLog(recordArray) {
         recordDate[i] = document.createElement("div");
         recordDate[i].setAttribute("id", "recordDate" + i);
         recordDate[i].setAttribute("class", "recordDate");
+
         var oneDate = new Date(recordArray[i - 1]['date']);
-        var dd = oneDate.getDate() + 1;
-        var mm = oneDate.getMonth();
-        var yyyy = oneDate.getFullYear();
-        console.log(dd, months[mm], yyyy);
+        var oneDatePlusOne = oneDate.setDate(oneDate.getDate() + 1);
+        var oneDateObject = new Date(oneDatePlusOne);
+        var dd = oneDateObject.getDate();
+        var mm = oneDateObject.getMonth();
+        var yyyy = oneDateObject.getFullYear();
+ 
         recordDate[i].innerHTML = "" + " " + dd + " " + months[mm] + ", " + yyyy;
         document.getElementById("tdRight" + i).appendChild(recordDate[i]);
 
