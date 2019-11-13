@@ -98,7 +98,7 @@ function addLog(recordArray) {
         recordTitle[i] = document.createElement("div");
         recordTitle[i].setAttribute("id", "recordTitle" + i);
         recordTitle[i].setAttribute("class", "recordTitle");
-        recordTitle[i].innerHTML = "<b>" + recordArray[i - 1]['site'] + " " + recordArray[i - 1]['place'] + "</b>";
+        recordTitle[i].innerHTML = "<b>" + recordArray[i - 1]['site'] + ", " + recordArray[i - 1]['place'] + "</b>";
         document.getElementById("tdRight" + i).appendChild(recordTitle[i]);
 
         recordDate[i] = document.createElement("div");
