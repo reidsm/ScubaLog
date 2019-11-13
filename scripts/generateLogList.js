@@ -1,20 +1,25 @@
 //This script currently adds a list of scuba dive log records to the home screen.
 //It does not yet link to the user's record but it will.
 
+//COPY THIS FUNCTION FOR A PROMISE (LINES 5 - 24)
 firebase.auth().onAuthStateChanged(function (user) {
     var recordArray = [];
+    console.log("this is the user", user.uid);
 
     if (user) {
+        //you can change line 10 to get at the data you want
         db.collection("users").doc(user.uid).collection("logs").get().then(function (querySnapshot) {
-            querySnapshot.forEach(function (doc) {
-                var record = {
-                    date: doc.data()['logDate'],
+            querySnapshot.forEach(function (doc) { //forEach iterates over the 
+                //your code goes here (12-17)
+                //creating a json object
+                var record = { //variable declaration for a record
+                    date: doc.data()['logDate'], //change the string in the square brackets to change the data you want
                     site: doc.data()['logDiveSite'],
                     place: doc.data()['logLocation']
                 };
-                recordArray.push(record);
+                recordArray.push(record); //adds the object to the array
             });
-            addLog(recordArray);
+            addLog(recordArray); //chain logic has to start within the promise 
         });
     } else {
         console.log("This code should be unreachable. The funny thing is I feel like someone will see this message one day. I'm sorry. -S");
@@ -22,7 +27,8 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 function addLog(recordArray) {
-
+    //console.log(recordArray);
+    
     recordArray = recordArray.sort(function (a, b) {
         var dateA = new Date(a.date);
         var dateB = new Date(b.date);
