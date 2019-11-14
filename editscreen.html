@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+
+    <!-- Style imports -->
+    <link rel="stylesheet" type="text/css" href="./style/editstyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Archivo+Narrow' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./scripts/jquery.star.rating.js"></script>
+
+
+    <!-- Relevant firebase script imports -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <!-- Our app's firebase configuration -->
+    <script src="./scripts/firebaseConfig.js"></script>
+
+    <!-- The script that writes the log to the database as a document in a new collection -->
+    <script src="./scripts/create_log.js"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <a href="index.html"><span id="backButton">&#10132;</span></a>
+        <h1>ScubaLogs</h1>
+    </div>
+    <div id="body">
+        <form>
+            <div class="dataBox">
+                <h3>TIME AND PLACE OF DIVE</h3>
+                <input type="text" id="diveSite" placeholder="Dive Site Name">
+                <input type="text" id="location" placeholder="City, Country of Dive Site">
+                <input type="date" id="date">
+                <input type="time" id="timeDescended">
+            </div>
+            <div class="dataBox">
+                <h3>DIVE PROFILE</h3>
+                <input type="number" id="depth" placeholder="Dive Depth (meters)">
+                <input type="number" id="length" placeholder="Dive Length (minutes)">
+                <textarea id="buddies" placeholder="Dive Buddies"></textarea>
+            </div>
+            <div class="dataBox">
+                <h3>Performance</h3>
+                <input type="number" id="totalWeight" placeholder="Total Weight to Descend (kg)">
+                <p id="buoyancyLabel">Buoyancy Control: </p>
+                <div id="buoyancy"></div>
+            </div>
+            <button type="button" id="submit" value="Submit" onclick="handleSubmit()">EDIT</button>
+        </form>+
+    </div>
+
+    
+
+
+    <!-- Makes the buoyancy control jquery widget work -->
+    <script>
+        $(function () {
+            $('#buoyancy').addRating();
+        });
+    </script>
+
+    <!-- Script contains instructions for the submit button to write the record to the database -->
+    <script src="./scripts/logScreenHandleSubmit.js"></script>
+
+</body>
+
+</html>
