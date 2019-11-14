@@ -27,5 +27,5 @@ function handleSubmit(){
 
     //send the log object to the script that writes the log to the database
     createLog(logObject);
-    
+    window.location.href="index.html";
 }
