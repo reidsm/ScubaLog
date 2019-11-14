@@ -24,5 +24,5 @@ function handleSubmit(){
     };
 
     createLog(logObject);
-    
+    window.location.href="index.html";
 }
