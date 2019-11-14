@@ -12,7 +12,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             querySnapshot.forEach(function (doc) { //forEach iterates over the 
                 //your code goes here (12-17)
                 //creating a json object
-                var record = { //variable declaration for a record
+                var record = { //variable declaration for a record object
                     date: doc.data()['logDate'], //change the string in the square brackets to change the data you want
                     site: doc.data()['logDiveSite'],
                     place: doc.data()['logLocation']
@@ -72,6 +72,8 @@ function addLog(recordArray) {
 
         recordTable[i] = document.createElement("table");
         recordTable[i].setAttribute("id", "recordTable" + i);
+        //from the unreal@coldmail.com user, password utah1944 id H0qhSaaOXDa2VtcPKM0nQBjc3W92
+        recordTable[i].setAttribute("data", "diqG98OXaeMYQ3bLtXpt");
         recordTable[i].setAttribute("class", "recordTable");
         document.getElementById("linkRecord" + i).appendChild(recordTable[i]);
 

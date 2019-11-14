@@ -5,7 +5,7 @@ function createLog(logObject){
     //use update not set
 
     firebase.auth().onAuthStateChanged(function(user){
-        //db.collection("users").doc(user.uid).update(logObject); 
+        //add the log object to the user's collection of logs.
         db.collection("users").doc(user.uid).collection("logs").add(logObject);
     });
 
