@@ -1,0 +1,99 @@
+[33mcommit 09a4e8456939bb1978132b255d80f568835332bf[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: samsonq2001 <samsonq2001@gmail.com>
+Date:   Thu Oct 10 10:44:11 2019 -0700
+
+    added links to different html files
+
+[33mcommit f8b6c5052a66eb37eae51854a9ef9a753fcbd6db[m
+Merge: 687b01f 086b7ba
+Author: Scott Reid <reidsm100@gmail.com>
+Date:   Thu Oct 10 10:41:05 2019 -0700
+
+    Merge branch 'master' of https://github.com/reidsm/ScubaLog
+
+[33mcommit 687b01f6d098ba3ca2b30b4a6b51d1e12ee624d8[m
+Author: Scott Reid <reidsm100@gmail.com>
+Date:   Thu Oct 10 10:40:23 2019 -0700
+
+    added a link
+
+[33mcommit 086b7bafe13030aab1c59ff9e415c88a01b3a725[m
+Merge: 15d3fc8 b9bcf28
+Author: daniilmol <daniilmik@gmail.com>
+Date:   Thu Oct 10 10:40:09 2019 -0700
+
+    Merge branch 'master' of https://github.com/reidsm/ScubaLog
+
+[33mcommit 15d3fc827e2d0e141d64297db8d57fe3ef4386a4[m
+Author: daniilmol <daniilmik@gmail.com>
+Date:   Thu Oct 10 10:39:36 2019 -0700
+
+    added nav tags on index2
+
+[33mcommit b9bcf28ab523d84ea3e509a9db7d8ac863bd2770[m
+Author: Scott Reid <reidsm100@gmail.com>
+Date:   Thu Oct 10 10:39:07 2019 -0700
+
+    added link to index2
+
+[33mcommit 6cea8e889b8f91e71fcc87e3268c6263eaf7cd26[m
+Author: Scott Reid <45023406+reidsm@users.noreply.github.com>
+Date:   Thu Oct 10 10:36:18 2019 -0700
+
+    Create README.md
+
+[33mcommit 6dbe253dd3895b918e276c9290174f72ecd8c34d[m
+Author: samsonq2001 <samsonq2001@gmail.com>
+Date:   Thu Oct 10 10:34:19 2019 -0700
+
+    added name to index.html and adding index3.html
+
+[33mcommit 60e4ac282adbcb5f2aa66a5ec7ed80fb5d548101[m
+Merge: 59a5481 affb30e
+Author: samsonq2001 <samsonq2001@gmail.com>
+Date:   Thu Oct 10 10:32:58 2019 -0700
+
+    Merge branch 'master' of https://github.com/reidsm/ScubaLog
+
+[33mcommit affb30ee0faf8ab0761697beca7d3baf27b1386b[m
+Author: daniilmol <daniilmik@gmail.com>
+Date:   Thu Oct 10 10:32:38 2019 -0700
+
+    index edited
+
+[33mcommit 59a548123f05c92f49ada9fe14f3382d51fdb065[m
+Merge: 1b0ec5a 3f9fd17
+Author: samsonq2001 <samsonq2001@gmail.com>
+Date:   Thu Oct 10 10:31:39 2019 -0700
+
+    Merge branch 'master' of https://github.com/reidsm/ScubaLog
+
+[33mcommit 1b0ec5ad1ff0a45b857dd2c77bc5f5628f3141e3[m
+Author: samsonq2001 <samsonq2001@gmail.com>
+Date:   Thu Oct 10 10:30:40 2019 -0700
+
+    added index3 and some code
+
+[33mcommit 3f9fd1798afc538570c74fce2ddeb3e5dc92c27a[m
+Author: daniilmol <daniilmik@gmail.com>
+Date:   Thu Oct 10 10:27:49 2019 -0700
+
+    added page
+
+[33mcommit b703b1f5e3591b2b28cd6f7c2cd55a24c130713c[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Scott Reid <reidsm100@gmail.com>
+Date:   Thu Oct 10 10:21:33 2019 -0700
+
+    added index.html
+
+[33mcommit 5d7e0a7d26adff8d3fe5e6ee15e51e7c07ce6f36[m
+Author: Scott Reid <reidsm100@gmail.com>
+Date:   Thu Oct 10 10:16:49 2019 -0700
+
+    commit 2
+
+[33mcommit 7c06cc8276fb5c8579656cac5a66b91b45ed09f1[m
+Author: Scott Reid <reidsm100@gmail.com>
+Date:   Thu Oct 10 09:51:42 2019 -0700
+
+    testing

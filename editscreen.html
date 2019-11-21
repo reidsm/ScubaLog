@@ -24,7 +24,7 @@
     <script src="./scripts/firebaseConfig.js"></script>
 
     <!-- The script that writes the log to the database as a document in a new collection -->
-    <script src="./scripts/create_log.js"></script>
+    <script src="./scripts/edit_log.js"></script>
 
 </head>
 
@@ -49,12 +49,12 @@
                 <textarea id="buddies" placeholder="Dive Buddies"></textarea>
             </div>
             <div class="dataBox">
-                <h3>Performance</h3>
+                <h3>PERFORMANCE</h3>
                 <input type="number" id="totalWeight" placeholder="Total Weight to Descend (kg)">
                 <p id="buoyancyLabel">Buoyancy Control: </p>
                 <div id="buoyancy"></div>
             </div>
-            <button type="button" id="submit" value="Submit" onclick="handleSubmit()">EDIT</button>
+            <button type="button" id="submit" value="Submit" onclick="handleEdit()">EDIT</button>
         </form>+
     </div>
 
@@ -69,8 +69,8 @@
     </script>
 
     <!-- Script contains instructions for the submit button to write the record to the database -->
-    <script src="./scripts/logScreenHandleSubmit.js"></script>
-
+    <script src="./scripts/logScreenHandleEdit.js"></script>
+    
 </body>
 
 </html>
