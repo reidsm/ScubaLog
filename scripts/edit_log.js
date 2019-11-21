@@ -9,7 +9,7 @@ function editLog(logObject){
         console.log(get_div_id());
         var url = get_div_id();
         db.collection("users").doc(user.uid).collection("logs").doc(url).update(logObject).then(function(){ 
-        window.location.href="index.html";
+        window.location.href="main.html";
         }).catch(function(error){
             console.log("there was an error");
         }); 
