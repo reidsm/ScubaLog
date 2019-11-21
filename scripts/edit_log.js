@@ -6,7 +6,19 @@ function editLog(logObject){
     //use update not set
 
     firebase.auth().onAuthStateChanged(function(user){
-        db.collection("users").doc(user.uid).collection("logs").doc("diqG98OXaeMYQ3bLtXpt").update(logObject); 
+        console.log(get_div_id());
+        var url = get_div_id();
+        db.collection("users").doc(user.uid).collection("logs").doc(url).update(logObject).then(function(){ 
+        window.location.href="index.html";
+        }).catch(function(error){
+            console.log("there was an error");
+        }); 
     });
 
+}
+function get_div_id(){
+    var url = window.location.search;
+    url = url.replace("?", '');
+    console.log(url);
+    return url;
 }

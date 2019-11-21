@@ -2,7 +2,8 @@ function onLoad() {
     //var diveSite = document.getElementById('diveSite');
 
     firebase.auth().onAuthStateChanged(function(user){
-        db.collection("users").doc(user.uid).collection("logs").doc("diqG98OXaeMYQ3bLtXpt").onSnapshot(function (doc) {
+        var url = get_div_id();
+        db.collection("users").doc(user.uid).collection("logs").doc(url).onSnapshot(function (doc) {
             // diveSiteCurrent = doc.data();
             console.log(doc.data().logDiveSite);
             document.getElementById('diveSite').value = doc.data().logDiveSite;
@@ -20,7 +21,12 @@ function onLoad() {
 });
 // console.log(diveSiteCurrent);
 }
-
+function get_div_id(){
+    var url = window.location.search;
+    url = url.replace("?", '');
+    console.log(url);
+    return url;
+}
 function handleEdit() {
 //This script writes the log to the database
 
