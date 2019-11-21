@@ -1,6 +1,7 @@
 //This script writes the log to the database
 
 function handleSubmit(){
+    //gather up the data fields
     var diveSite = document.getElementById('diveSite').value;
     var location = document.getElementById('location').value;
     var date = document.getElementById('date').value;
@@ -12,6 +13,7 @@ function handleSubmit(){
     var weight = document.getElementById('totalWeight').value;
     // var buoyancyControl = document.getElementById('buoyancy').value; TODO make this work
     
+    //make an object out of the data from the form fields
     var logObject = {
         logDiveSite: diveSite,
         logLocation: location,
@@ -23,6 +25,10 @@ function handleSubmit(){
         logWeight: weight,
     };
 
+    //send the log object to the script that writes the log to the database
     createLog(logObject);
+<<<<<<< HEAD
   
+=======
+>>>>>>> 41e0649ac725afefd8c9795ef5316c3bea4e1e01
 }
