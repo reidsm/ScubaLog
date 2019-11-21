@@ -69,7 +69,7 @@ function addLog(recordArray) {
 
         linkRecord[i] = document.createElement("a");
         linkRecord[i].setAttribute("id", recordArray[i - 1]['docID']);
-        linkRecord[i].setAttribute("href", "./editscreen.html")
+        linkRecord[i].setAttribute("href", "./editscreen.html?" + recordArray[i - 1]['docID']);
         document.getElementById("logs").appendChild(linkRecord[i]);
 
         recordTable[i] = document.createElement("table");
