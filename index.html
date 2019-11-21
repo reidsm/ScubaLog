@@ -2,61 +2,37 @@
 <html lang="en">
 
 <head>
-  <title></title>
-  <meta charset="utf-8">
+    <title>Login Screen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Style Imports -->
-  <link rel="stylesheet" type="text/css" href="./style/formatstyle.css">
-  <link rel="stylesheet" type="text/css" href="./style/homeScreenStyle.css">
-  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <!-- Style imports -->
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="./style/loginscreenstyle.css">
 
-  <!-- Relevant firebase script imports -->
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <!-- Relevant firebase script imports -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
     <!-- Our app's firebase configuration -->
     <script src="./scripts/firebaseConfig.js"></script>
-
-      <!-- Our app creates a user collection and document upon login -->
-      <script src="scripts/create_user.js"></script>
-      <script>createUser();</script>
-
 </head>
 
 <body>
-  <div id="headerBackground">
+
     <div id="header">
-      <h1>ScubaLogs</h1>
+        <h1>ScubaLogs</h1>
     </div>
-    <a href="./Log.html">
-      <div id="addNew">
-        <div id="plus">+</div>
-      </div>
-    </a>
-  </div>
-  <div id="logsParent">
-    <div id="logs"></div>
-  </div>
 
-  <!-- TODO This script dynamically lists this user's scuba dive logs. -->
-  <script src="./scripts/generateLogList.js"></script>
+    <!-- Firebase containers that must be present on the login page -->
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
 
-  <!-- <script>
-//     console.log(firebase.auth().currentUser);
-//   //var user = firebase.auth().currentUser.uid;
-// //console.log(user);
-
-// db.collection("users").get().then(function(querySnapshot) {
-//     querySnapshot.forEach(function(doc) {
-//         console.log(doc.id, " => ", doc.data());
-//     });
-// });
-
-// console.log(docRef);
-  </script> -->
+    <!-- Firebase Login Script -->
+    <script src="./scripts/firebaseLogin.js"></script>
 
 </body>
 

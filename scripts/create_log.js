@@ -7,7 +7,7 @@ function createLog(logObject){
     firebase.auth().onAuthStateChanged(function(user){
         //add the log object to the user's collection of logs.
         db.collection("users").doc(user.uid).collection("logs").add(logObject).then(function() {
-            window.location.href="index.html";
+            window.location.href="main.html";
         }).catch(function(error){
             console.log("there was an error");
         });
