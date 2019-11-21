@@ -6,9 +6,7 @@ function editLog(logObject){
     //use update not set
 
     firebase.auth().onAuthStateChanged(function(user){
-  
         db.collection("users").doc(user.uid).collection("logs").doc("diqG98OXaeMYQ3bLtXpt").update(logObject); 
-        
     });
 
 }

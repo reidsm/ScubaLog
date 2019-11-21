@@ -12,10 +12,12 @@ firebase.auth().onAuthStateChanged(function (user) {
             querySnapshot.forEach(function (doc) { //forEach iterates over the 
                 //your code goes here (12-17)
                 //creating a json object
+                console.log(doc.id);
                 var record = { //variable declaration for a record object
                     date: doc.data()['logDate'], //change the string in the square brackets to change the data you want
                     site: doc.data()['logDiveSite'],
-                    place: doc.data()['logLocation']
+                    place: doc.data()['logLocation'],
+                    docID: doc.id
                 };
                 recordArray.push(record); //adds the object to the array
             });
@@ -66,16 +68,16 @@ function addLog(recordArray) {
     for (i = recordArray.length; i > 0; i--) {
 
         linkRecord[i] = document.createElement("a");
-        linkRecord[i].setAttribute("id", "linkRecord" + i);
+        linkRecord[i].setAttribute("id", recordArray[i - 1]['docID']);
         linkRecord[i].setAttribute("href", "./editscreen.html")
         document.getElementById("logs").appendChild(linkRecord[i]);
 
         recordTable[i] = document.createElement("table");
         recordTable[i].setAttribute("id", "recordTable" + i);
         //from the unreal@coldmail.com user, password utah1944 id H0qhSaaOXDa2VtcPKM0nQBjc3W92
-        recordTable[i].setAttribute("data", "diqG98OXaeMYQ3bLtXpt");
+        // recordTable[i].setAttribute("data", recordArray[i - 1]['docID']);
         recordTable[i].setAttribute("class", "recordTable");
-        document.getElementById("linkRecord" + i).appendChild(recordTable[i]);
+        document.getElementById(recordArray[i - 1]['docID']).appendChild(recordTable[i]);
 
         recordTr[i] = document.createElement("tr");
         recordTr[i].setAttribute("id", "recordTr" + i);
