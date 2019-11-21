@@ -7,6 +7,7 @@ function createLog(logObject){
     firebase.auth().onAuthStateChanged(function(user){
         //db.collection("users").doc(user.uid).update(logObject); 
         db.collection("users").doc(user.uid).collection("logs").add(logObject);
+        
     });
 
 }
