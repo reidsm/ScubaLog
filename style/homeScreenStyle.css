@@ -1,26 +1,21 @@
 #addNew{
-     position: fixed;
-     width: 75vw;
-     left: 12.5vw;
-     height: 150px;
+     width: 60%;
+     height: 25%;
      margin: auto;
-     margin-top:2vh;
-     background: #FFFFFF;
-     border: 3px dashed #000000;
+     margin-top:30px;
+     background: #00c1fc;
+     border-radius: 75px;
 }
  #plus{
      width: 37px;
      height: 75px;
-     left: 187px;
-     top: 88px;
      margin: auto;
      font-family: Roboto;
      font-style: normal;
      font-weight: normal;
-     font-size: 120px;
-     line-height: 75px;
-     padding-top: 2vh;
-     color: #000000;
+     font-size: 12vw;
+     line-height: 15vw;
+     color: white;
 }
  #headerBackground{
      background-color: white;
@@ -29,7 +24,7 @@
      position:fixed;
 }
  #logs {
-     padding-top:34vh;
+     padding-top:60vw;
 }
  .tdRight{
      padding-top:2vh;
