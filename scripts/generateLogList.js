@@ -27,7 +27,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         console.log("This code should be unreachable. The funny thing is I feel like someone will see this message one day. I'm sorry. -S");
     }
 });
-
+//This function adds the log to main.html
 function addLog(recordArray) {
     //console.log(recordArray);
     
