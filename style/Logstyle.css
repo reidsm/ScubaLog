@@ -14,6 +14,12 @@
     font-size:50pt;
     transform: rotate(180deg) translateY(100px) translateX(-40px);
 }
+#backButton:active{
+    position:absolute;
+    color:#E6E6E6;
+    font-size:50pt;
+    transform: rotate(180deg) translateY(100px) translateX(-40px);
+}
 #header h1{
     text-align:center;
     margin:0;
@@ -75,6 +81,36 @@ body{
 }
 #submit{
     background-color: #00c1fc;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 3% 10%;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    margin-bottom:10%;
+    cursor: pointer;
+    font-size:48pt;
+    font-family:'Archivo Narrow';
+    box-shadow: 10px 10px 5px gray;
+}
+#submit:hover{
+    background-color: #30CFFF;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 3% 10%;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    margin-bottom:10%;
+    cursor: pointer;
+    font-size:48pt;
+    font-family:'Archivo Narrow';
+    box-shadow: 10px 10px 5px gray;
+}
+#submit:active{
+    background-color: #00A6D9;
     border: none;
     border-radius: 50px;
     color: white;
