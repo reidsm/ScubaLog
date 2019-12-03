@@ -27,19 +27,13 @@ function handleSubmit() {
     };
 
     // send the log object to the script that writes the log to the database
-    if (diveSite !== '' && location !== ''){
+    if (diveSite !== '' && location !== '' && date !== '') {
         createLog(logObject);
+    } else {
+        console.log("You need to fill in the divesite, location, and date");
     }
-    console.log("this is running", diveSite, location);
-    if(diveSite === ''){
-        console.log("diveSite is empty");
-        return;
-    }
-    console.log("I am running");
-    
-    createLog(logObject);
 
-    // setTimeout(function(){ window.location.href="index.html"; }, 3000);
-    // window.location.href="index.html";
+
+    
     
 }
