@@ -30,6 +30,10 @@
 }
 body{
     margin:0;
+    color: #E6E6E6;
+}
+body i{
+    color: black;
 }
 .dataBox{
     align-self: center;
@@ -38,7 +42,7 @@ body{
     border-radius:50px;
     border: 1px solid gray;
     background-color: white;
-    box-shadow: 10px 10px 5px 0px gray;
+    box-shadow: 0px 0px 35px 5px rgba(138,138,138,0.88);
 }
 .dataBox h3{
     text-align: left;
@@ -47,8 +51,7 @@ body{
     padding-left: 30px;
     padding-top: 10px;
     margin:0;
-    color: gray;
-    text-decoration: underline; 
+    color: black;
 }
 .dataBox input{
     width: 90%;
@@ -80,7 +83,7 @@ body{
     line-height: 280%;
 }
 #submit{
-    background-color: #00c1fc;
+    background-color: #00FCB9;
     border: none;
     border-radius: 50px;
     color: white;
@@ -92,10 +95,10 @@ body{
     cursor: pointer;
     font-size:48pt;
     font-family:'Archivo Narrow';
-    box-shadow: 10px 10px 5px gray;
+    box-shadow: 0px 0px 35px 5px rgba(138,138,138,0.88);
 }
 #submit:hover{
-    background-color: #30CFFF;
+    background-color: #4CFFCF;
     border: none;
     border-radius: 50px;
     color: white;
@@ -107,10 +110,10 @@ body{
     cursor: pointer;
     font-size:48pt;
     font-family:'Archivo Narrow';
-    box-shadow: 10px 10px 5px gray;
+    box-shadow: 0px 0px 35px 5px rgba(138,138,138,0.88);
 }
 #submit:active{
-    background-color: #00A6D9;
+    background-color: #00EAAC;
     border: none;
     border-radius: 50px;
     color: white;
@@ -122,7 +125,7 @@ body{
     cursor: pointer;
     font-size:48pt;
     font-family:'Archivo Narrow';
-    box-shadow: 10px 10px 5px gray;
+    box-shadow: 0px 0px 35px 5px rgba(138,138,138,0.88);
 }
 @font-face {
     font-family: 'Material Icons';
