@@ -1,4 +1,5 @@
 //This script writes the log to the database
+<<<<<<< HEAD
 function submitform(){
     var f = document.getElementsByTagName('form')[0];
     if(f.checkValidity()){
@@ -10,10 +11,16 @@ function submitform(){
 }
 function handleSubmit(){
     console.log("HAHA Funny");
+=======
+
+function handleSubmit() {
+    
+>>>>>>> 3a03c54ab6fee3704fe21edd443e3498e4cf5265
     //gather up the data fields
     var diveSite = document.getElementById('diveSite').value;
     var location = document.getElementById('location').value;
     var date = document.getElementById('date').value;
+    
     var timeDescended = document.getElementById('timeDescended').value;
     
     var depth = document.getElementById('depth').value;
@@ -26,7 +33,10 @@ function handleSubmit(){
     var logObject = {
         logDiveSite: diveSite,
         logLocation: location,
-        logDate: date,
+            
+        
+        logDate: date
+    ,
         logTimeDescended: timeDescended,
         logDepth: depth,
         logLength: length,
@@ -34,9 +44,14 @@ function handleSubmit(){
         logWeight: weight,
     };
 
-    //send the log object to the script that writes the log to the database
-    createLog(logObject);
-    // setTimeout(function(){ window.location.href="index.html"; }, 3000);
-    // window.location.href="index.html";
+    // send the log object to the script that writes the log to the database
+    if (diveSite !== '' && location !== '' && date !== '') {
+        createLog(logObject);
+    } else {
+        console.log("You need to fill in the divesite, location, and date");
+    }
+
+
+    
     
 }

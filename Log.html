@@ -39,18 +39,18 @@
                 <h3>TIME AND PLACE OF DIVE</h3>
                 <input type="text" id="diveSite" placeholder="Enter Dive Site Name *" required>
                 <input type="text" id="location" placeholder="Enter City, Country of Dive Site *" required>
-                <input type="date" id="date" required>
+                <input type="date" onload="getDate()" id="date">
                 <input type="time" id="timeDescended">
             </div>
             <div class="dataBox">
                 <h3>DIVE PROFILE</h3>
                 <input type="number" id="depth" placeholder="Enter Dive Depth (meters)">
                 <input type="number" id="length" placeholder="Enter Dive Length (minutes)">
-                <textarea id="buddies" placeholder="Enter Dive Buddies"></textarea>
+                <textarea id="buddies" placeholder="Enter your Dive Buddies"></textarea>
             </div>
             <div class="dataBox">
                 <h3>PERFORMANCE</h3>
-                <input type="number" id="totalWeight" placeholder="Enter Total Weight to Descend (kg)">
+                <input type="number" id="totalWeight" placeholder="Enter Total Weight needed to Descend (kg)">
                 <p id="buoyancyLabel">Buoyancy Control: </p>
                 <div id="buoyancy"></div>
             </div>
@@ -68,6 +68,33 @@
             $('#buoyancy').addRating();
         });
     </script>
+
+    <!-- This gets the current date and autofills the date.-->>
+    <script>
+        function getDate() {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if(dd<10) {
+      dd = '0'+dd
+  } 
+
+  if(mm<10) {
+      mm = '0'+mm
+  } 
+
+  today = yyyy + '-' + mm + '-' + dd;
+  console.log(today);
+  document.getElementById("date").value = today;
+}
+
+
+window.onload = function() {
+  getDate();
+};
+        </script>
 
     <!-- Script contains instructions for the submit button to write the record to the database -->
     <script src="./scripts/logScreenHandleSubmit.js"></script>
