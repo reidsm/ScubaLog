@@ -43,8 +43,8 @@ function addLog(recordArray) {
         }
         return 0;
     });
-    console.log(recordArray);
-    console.log(recordArray[0]['date']);
+   
+    
   
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
    
