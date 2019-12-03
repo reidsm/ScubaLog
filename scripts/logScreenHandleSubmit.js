@@ -6,6 +6,7 @@ function handleSubmit() {
     var diveSite = document.getElementById('diveSite').value;
     var location = document.getElementById('location').value;
     var date = document.getElementById('date').value;
+    
     var timeDescended = document.getElementById('timeDescended').value;
     
     var depth = document.getElementById('depth').value;
@@ -18,7 +19,10 @@ function handleSubmit() {
     var logObject = {
         logDiveSite: diveSite,
         logLocation: location,
-        logDate: date,
+            
+        
+        logDate: date
+    ,
         logTimeDescended: timeDescended,
         logDepth: depth,
         logLength: length,
