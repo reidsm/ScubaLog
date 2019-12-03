@@ -30,7 +30,8 @@ firebase.auth().onAuthStateChanged(function (user) {
 //This function adds the log to main.html
 function addLog(recordArray) {
     //console.log(recordArray);
-    
+    //This is a sorting algorithm. We could have used .orderBy() here, but we were not aware of this
+    //option when we wrote the logic for this page.
     recordArray = recordArray.sort(function (a, b) {
         var dateA = new Date(a.date);
         var dateB = new Date(b.date);
