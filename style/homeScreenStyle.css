@@ -3,15 +3,16 @@
      height: 25%;
      margin: auto;
      margin-top:30px;
-     background: #00c1fc;
+     background: #00FCB9;
      border-radius: 75px;
+     box-shadow: 0px 2px 35px 5px rgba(138,138,138,0.88);
 }
 #addNew:hover{
      width: 60%;
      height: 25%;
      margin: auto;
      margin-top:30px;
-     background: #30CFFF;
+     background: #4CFFCF;
      border-radius: 75px;
 }
 #addNew:active{
@@ -19,25 +20,26 @@
      height: 25%;
      margin: auto;
      margin-top:30px;
-     background: #00A6D9;
+     background: #00EAAC;
      border-radius: 75px;
 }
  #plus{
-     width: 37px;
-     height: 75px;
-     margin: auto;
+
+     text-align:center;
      font-family: Roboto;
      font-style: normal;
      font-weight: normal;
      font-size: 12vw;
      line-height: 15vw;
      color: white;
+     
 }
  #headerBackground{
      background-color: white;
      height:600px;
      width:100vw;
      position:fixed;
+     box-shadow: 0px 2px 35px 5px rgba(138,138,138,0.88);
 }
  #logs {
      padding-top:60vw;
@@ -47,15 +49,19 @@
      padding-bottom:2vh;
      padding-left:8vw;
      font-size:30pt;
+     font-family: 'Comfortaa';
 }
  .divCirc{
      border: solid 2px black;
+     color: white;
+     background-color: #0043FC;
      border-radius:50%;
      margin-left:8vw;
      height:130px;
      width:130px;
      text-align:center;
      font-size:40px;
+     font-family: 'Comfortaa';
 }
  .circNum{
      padding-top:.1vh;
