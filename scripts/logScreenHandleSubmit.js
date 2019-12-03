@@ -1,6 +1,15 @@
 //This script writes the log to the database
-
+function submitform(){
+    var f = document.getElementsByTagName('form')[0];
+    if(f.checkValidity()){
+        f.submit();
+        handleSubmit();
+    }else{
+        alert(document.getElementById('example').validationMessage);
+    }
+}
 function handleSubmit(){
+    console.log("HAHA Funny");
     //gather up the data fields
     var diveSite = document.getElementById('diveSite').value;
     var location = document.getElementById('location').value;

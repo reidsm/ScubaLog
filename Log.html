@@ -34,32 +34,33 @@
         <h1>ScubaLogs</h1>
     </div>
     <div id="body">
-        <form>
+        <form id="form">
             <div class="dataBox">
                 <h3>TIME AND PLACE OF DIVE</h3>
-                <input type="text" id="diveSite" placeholder="Dive Site Name">
-                <input type="text" id="location" placeholder="City, Country of Dive Site">
-                <input type="date" id="date">
+                <input type="text" id="diveSite" placeholder="Enter Dive Site Name *" required>
+                <input type="text" id="location" placeholder="Enter City, Country of Dive Site *" required>
+                <input type="date" id="date" required>
                 <input type="time" id="timeDescended">
             </div>
             <div class="dataBox">
                 <h3>DIVE PROFILE</h3>
-                <input type="number" id="depth" placeholder="Dive Depth (meters)">
-                <input type="number" id="length" placeholder="Dive Length (minutes)">
-                <textarea id="buddies" placeholder="Dive Buddies"></textarea>
+                <input type="number" id="depth" placeholder="Enter Dive Depth (meters)">
+                <input type="number" id="length" placeholder="Enter Dive Length (minutes)">
+                <textarea id="buddies" placeholder="Enter Dive Buddies"></textarea>
             </div>
             <div class="dataBox">
                 <h3>PERFORMANCE</h3>
-                <input type="number" id="totalWeight" placeholder="Total Weight to Descend (kg)">
+                <input type="number" id="totalWeight" placeholder="Enter Total Weight to Descend (kg)">
                 <p id="buoyancyLabel">Buoyancy Control: </p>
                 <div id="buoyancy"></div>
             </div>
-            <button type="button" id="submit" value="Submit" onclick="handleSubmit()">SUBMIT</button>
+            <button type="button" onclick="submitform()" id="save">Submit</button>
+            <input type="submit" id="submit" value="Submit">
         </form>+
+        <script>function submitform(){
+           $('#submit').click();   
+        }</script>
     </div>
-
-    
-
 
     <!-- Makes the buoyancy control jquery widget work -->
     <script>
