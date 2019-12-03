@@ -1,6 +1,7 @@
 //This script writes the log to the database
 
-function handleSubmit(){
+function handleSubmit() {
+    
     //gather up the data fields
     var diveSite = document.getElementById('diveSite').value;
     var location = document.getElementById('location').value;
@@ -25,8 +26,19 @@ function handleSubmit(){
         logWeight: weight,
     };
 
-    //send the log object to the script that writes the log to the database
+    // send the log object to the script that writes the log to the database
+    if (diveSite !== '' && location !== ''){
+        createLog(logObject);
+    }
+    console.log("this is running", diveSite, location);
+    if(diveSite === ''){
+        console.log("diveSite is empty");
+        return;
+    }
+    console.log("I am running");
+    
     createLog(logObject);
+
     // setTimeout(function(){ window.location.href="index.html"; }, 3000);
     // window.location.href="index.html";
     
