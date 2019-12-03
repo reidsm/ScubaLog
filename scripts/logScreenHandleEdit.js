@@ -1,3 +1,4 @@
+//When the edit screen is loaded, it gathers the field data and autofills everything.
 function onLoad() {
     //var diveSite = document.getElementById('diveSite');
 
@@ -27,6 +28,7 @@ function get_div_id(){
     console.log(url);
     return url;
 }
+//This function stores the field's data and stores it in logObject.
 function handleEdit() {
 //This script writes the log to the database
 

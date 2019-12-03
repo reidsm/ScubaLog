@@ -1,4 +1,5 @@
-
+//This function gets called once a user edits a log. 
+//It updates all the field's information.
 function editLog(logObject){
 
     // if the user is authenticated, get this "user" object
@@ -16,6 +17,8 @@ function editLog(logObject){
     });
 
 }
+
+//This function gets the url of editscreen.html to autofill the correct information.
 function get_div_id(){
     var url = window.location.search;
     url = url.replace("?", '');
